@@ -42,34 +42,14 @@ nav.menu-open {
   background: transparent !important;
 }
 
-.nav-logo-img {
-  height: 68px;
-  width: 68px;
+.logo-img {
+  height: 48px;
+  width: auto;
   object-fit: contain;
-  border-radius: 0;
-  background: transparent;
-  filter: invert(1) brightness(10);
-  transition: filter 0.35s ease, transform 0.3s ease;
-  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
-.nav-logo-img:hover {
-  filter: invert(58%) sepia(80%) saturate(600%) hue-rotate(155deg) brightness(1.4) drop-shadow(0 0 14px rgba(0,212,255,1));
-  transform: scale(1.12);
-}
-
-.footer-logo-img {
-  height: 56px;
-  width: 56px;
-  object-fit: contain;
-  background: transparent;
-  filter: invert(1) brightness(9);
-  opacity: 0.88;
-  transition: opacity 0.25s, filter 0.3s ease, transform 0.3s ease;
-}
-.footer-logo-img:hover {
-  opacity: 1;
+.nav-logo:hover .logo-img, .footer-logo:hover .logo-img {
   transform: scale(1.1);
-  filter: invert(58%) sepia(80%) saturate(600%) hue-rotate(155deg) brightness(1.4) drop-shadow(0 0 14px rgba(0,212,255,1));
 }
 
 /* ── SCROLLBAR ── */
