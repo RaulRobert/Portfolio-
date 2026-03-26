@@ -31,7 +31,16 @@ body {
 ::selection { background: var(--accent); color: #000; }
 
 /* ── LOGO IMAGES ── */
-.nav-logo { background: none !important; }
+.nav-logo { 
+  background: none !important; 
+  position: relative; 
+  z-index: 101; /* Keeps logo above the open mobile menu */
+}
+
+nav.menu-open {
+  backdrop-filter: none !important;
+  background: transparent !important;
+}
 
 .nav-logo-img {
   height: 68px;
@@ -130,8 +139,25 @@ nav {
 .nav-cta:hover { background: var(--accent) !important; color: #000 !important; }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
 
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.hamburger span { 
+  display: block; 
+  width: 24px; 
+  height: 2px; 
+  background: var(--text); 
+  border-radius: 2px; 
+  transition: all 0.3s ease-in-out; /* Smoothed out the transition */
+}
 /* ── HERO ── */
 #hero {
   min-height: 100vh;

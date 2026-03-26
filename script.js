@@ -36,11 +36,16 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // ── NAV HAMBURGER ──
 function toggleMenu() {
+  document.getElementById('navbar').classList.toggle('menu-open'); // Added this
   document.getElementById('navLinks').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('active');
 }
 
+// Ensure everything resets when a link is clicked
 document.querySelectorAll('#navLinks a').forEach(a => {
   a.addEventListener('click', () => {
+    document.getElementById('navbar').classList.remove('menu-open'); // Added this
     document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('active');
   });
 });
